@@ -1,0 +1,221 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html,body {
+	width: 100%;
+	height: 100%;
+}
+
+ul,
+li {
+    list-style-type: none;
+}
+    
+    /*主体部分*/
+#content {
+    width: 100%;
+    height: 100%;
+    /* top: 20%; */
+    overflow: hidden;
+    position: relative;
+}
+
+.content-wrap {
+    position: absolute;
+}
+
+.content-wrap > li {
+    float: left;
+    overflow: hidden;
+    position: relative;
+}
+
+button {
+        width: 100px;
+        height: 50px;
+    }
+
+.button {
+    position: absolute;
+    bottom: 0;
+}
+    
+
+.charector {
+    width: 151px;
+    height: 291px;
+    background: url("../img/boy.png") -0px -291px no-repeat;
+    position: absolute;
+    /* 设置一个元素的坐标 */
+    left: 6%;
+    top: 55%;
+    z-index: 99;
+}
+.slowWalk {
+	animation: person-slow 1s infinite steps(1, start);
+}
+
+.slowFlowerWalk {
+	animation: person-takeFlower-slow 1s infinite steps(1,start);
+}
+
+.pauseWalk {
+	animation-play-state: paused;
+}
+
+.restoreOrigin {
+	background-position: -453px -291px;
+}
+
+.boyRotate {
+	animation: boy-rotate 850ms 1 step-start forwards;
+}
+
+@-webkit-keyframes person-slow{
+	0% {
+		background-position: -0px -291px;
+	}
+	25% {
+		background-position: -602px -0px;
+	}
+	50% {
+		background-position: -302px -291px;
+	}
+	75% {
+		background-position: -151px -291px;
+	}
+	100% {
+		background-position: -0px -291px;
+	}
+}
+
+@-webkit-keyframes person-takeFlower-slow{
+	   0% {
+           background-position: -453px -0px;
+       }
+       25% {
+           background-position: -904px -0px;
+       }
+       50% {
+           background-position: -451px -0px;
+       }
+       75% {
+           background-position: -753px -0px;
+       }
+       100% {
+           background-position: -300px -0px;
+       }
+}
+
+@-webkit-keyframes boy-rotate{
+	   0% {
+	       background-position: -603px -291px;
+	   }
+	   16.7% {
+	       background-position: -150px -0px;
+	   }
+	   33.4% {
+	       background-position: -453px -291px;
+	   }
+	   50.1% {
+	       background-position: -0px -0px;
+	   }
+	   66.8% {
+	       background-position: -903px -291px;
+	   }
+	   83.5% {
+	       background-position: -753px -291px;
+	   }
+	   100% {
+	       background-position: -603px -291px;
+	   }
+}
+
+/*-------- 太阳自转以及动画 --------*/
+#sun {
+    background: url("../img/sun.png") no-repeat;
+    position: absolute;
+    z-index: 1;
+    top: -30px;
+    height: 201px;
+    width: 201px;
+    right: 40%;
+}
+
+.rotation {
+    -webkit-animation-name: rotation;
+    -webkit-animation-duration: 30s;
+    -moz-animation-name: rotation;
+    -moz-animation-duration: 30s;
+}
+
+@-webkit-keyframes rotation {
+    /*？*/
+    0% {
+		transform: translateX(0) translateY(0);
+	}
+	100% {
+	    transform: translateX(-2000px) translateY(400px);
+	}
+}
+
+@-moz-keyframes rotation {
+    /*？*/
+    0% {
+		transform: translateX(0) translateY(0);
+	}
+	100% {
+	    transform: translateX(-2000px) translateY(400px);
+	}
+}
+
+/* 天空云 */
+.cloud {
+    z-index: 2;
+    position: absolute;
+}
+
+.cloud1 {
+    width: 181px;
+    height: 101px;
+    left: -5%;
+    top: 15%;
+    background: url("../img/cloud1.png");
+}
+
+
+.cloud2 {
+    width: 301px;
+    height: 140px;
+    right: -5%;
+    background: url("../img/cloud2.png");
+}
+
+.cloud1Anim {
+	animation: smallCloud 10s infinite;
+}
+
+.cloud2Anim {
+	animation: largeCloud 20s infinite;
+}
+
+@-webkit-keyframes smallCloud{
+	from{
+		left: -5%;
+	}
+	to{
+		left: 100%;
+	}
+}
+
+@-webkit-keyframes largeCloud{
+	from{
+		right: -5%;
+	}
+	to{
+		right: 100%;
+	}
+}
+
